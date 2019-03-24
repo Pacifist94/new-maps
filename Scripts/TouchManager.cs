@@ -1,0 +1,124 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TouchManager : MonoBehaviour {
+
+    public Collider2D[] arrayColliders;
+    // Use this for initialization
+
+    Dictionary<int, Queue<Collider2D>> poolDictionaryC2D = new Dictionary<int, Queue<Collider2D>>();
+
+    void Start() {
+        //somewhere we need to add collider to dictionary, so we can search them
+        EnqueueCollider2D(arrayColliders[0]);
+        EnqueueCollider2D(arrayColliders[1]);
+        EnqueueCollider2D(arrayColliders[2]);
+        EnqueueCollider2D(arrayColliders[3]);
+
+        //Somewhere we need to remove them ie when sound is played
+        DequeueCollider2D(arrayColliders[0]);
+        Debug.Log(poolDictionaryC2D.Count); 
+       
+    }
+
+    public void EnqueueCollider2D(Collider2D COL2D)
+    {
+        int poolKey = COL2D.gameObject.GetInstanceID();
+
+
+
+        if (!poolDictionaryC2D.ContainsKey(poolKey))
+        {
+            poolDictionaryC2D.Add(poolKey, new Queue<Collider2D>());
+
+
+           // COL2D.enabled = false;
+            poolDictionaryC2D[poolKey].Enqueue(COL2D);
+           
+        }
+    }
+
+    public bool ContainsInstanceID (int InstanceID)
+    {
+
+        if (poolDictionaryC2D.ContainsKey(InstanceID))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+
+    public void DequeueCollider2D(Collider2D COL2D)
+    {
+
+
+        int poolKey = COL2D.gameObject.GetInstanceID();
+
+        if (poolDictionaryC2D.ContainsKey(poolKey))
+        {
+           poolDictionaryC2D.Remove(poolKey);
+
+        }
+    }
+
+
+    // Update is called once per frame
+    void Update () {
+
+
+        if (Input.touchCount > 0) // If there is at least one touch 
+        {
+
+            //loop through all the touches
+            for (int i = 0; i < Input.touchCount; i++)
+            {
+                // Convert Screen Coordinated to WorldPoint
+                Vector3 wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position);
+                Vector2 touchPos = new Vector2(wp.x, wp.y);
+
+
+                try// try to check if the object we hit is on the dictionary
+                {
+
+                    // If the object we Touch exist in the dictionary and Touch Phase: Began
+                    if (ContainsInstanceID(Physics2D.OverlapPoint(touchPos).gameObject.GetInstanceID()) && Input.GetTouch(i).phase == TouchPhase.Began)
+                    {
+
+                        //This is how we access to the object Comonents that we hit:
+                        // Physics2D.OverlapPoint(touchPos).gameObject.GetComponent<Collider2D>().enabled = false;
+                        // Physics2D.OverlapPoint(touchPos).gameObject.SetActive(false);
+
+                        //we will need to check the type of prefab
+                        Physics2D.OverlapPoint(touchPos).gameObject.GetComponent<Animator>().Play("TapExcellent");
+
+                    }
+
+
+
+
+
+
+
+
+                }
+                catch (System.Exception)
+                {}
+                    
+                
+
+             
+
+
+
+                
+                }
+        }
+
+    }
+            
+}
