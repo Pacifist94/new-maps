@@ -880,3 +880,47 @@ function fncreplacing2(){
 // replace space with tabs
 
 
+
+
+//-----------------------------------
+
+//Make a Collider reference array when spawning the prefab
+Collider2D colsSpawned[];
+
+
+// save Collider to array if position is (-2,-1,0,1,2)
+if(position == -2 ||position == -1 ||position == 0 ||position == 1 ||position == 2 )
+{
+colsSpawned.push();	
+}
+
+
+
+//Have a MoveDown Script for each TouchID / Or just one who checkes all collider 
+
+//Dedicated fingerId 1
+//Try Pool with Dictionary
+void Update(){
+
+if(Input.){
+
+}
+
+
+}
+
+
+
+
+// Once we touch a prefab remove it from the array
+
+
+Lists
+
+
+
+
+
+
+
+
