@@ -1,0 +1,124 @@
+using UnityEngine.UI;
+public class NewMoveDown : MonoBehaviour
+{
+
+	public float V_Units;
+	public float speed;
+   
+ 	public bool wasCol2dDisabled = false;
+
+    public int soundID;
+
+    public bool wasPressed = false;
+
+    public bool isTapPrefab = false;
+    public bool hold = false;
+
+    public float holdSeconds; // change inspector
+    
+    public float secondsPressed;
+
+    public float goodScalar = 0.90f;// change inspector
+
+    public int myFingerID = 11;
+    public bool wasFingAssigned; 
+     
+    public bool isEmpty = false;
+
+    //public int AudioSourceIndex;
+
+    public bool isHelper;
+    public bool isGuide;
+
+    public Rigidbody2D rb;
+
+
+ 	void Start()
+    {
+        myStart();
+    }
+
+	public void myStart() // this function allows to call start from extenal scripts
+    {
+
+    	rb = GetComponent<Rigidbody2D>();
+
+        float height = float.Parse(Screen.height.ToString());
+        float width = float.Parse(Screen.width.ToString());
+        V_Units = height / width * 5;
+        col2d = transform.GetComponent<Collider2D>();
+
+        secondsPressed = 0;
+    }
+
+ 	public void beginCoroutine() // Calles the disable function
+    {
+        StartCoroutine(DisableGameObject());
+
+    }
+
+
+    IEnumerator DisableGameObject()// disables after 3 seconds
+    {
+
+        yield return new WaitForSeconds(3f);
+
+        transform.gameObject.SetActive(false);
+    }
+
+    void Update()
+    {
+
+
+        if ((isTapPrefab && !isHelper) || hold)
+        {
+            if (gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("HoldPressAnim"))
+            {
+
+                gameObject.GetComponent<Animator>().speed = PoolManager.instance.GlobalSpeed / 0.3378f * 1f;
+
+
+            }
+
+        } 
+
+
+//COLLIDER SWITCHER
+
+        if (!isGuide && !hold)
+        {
+            if (wasPressed)
+            {
+                if (transform.position.x >= -2 && transform.position.x <= 2)
+                {
+                    col2d.enabled = false;
+
+                }
+            }
+          
+
+            
+                if (Input.touchCount > 0)
+                {
+
+                if (transform.position.x >= -2 && transform.position.x <= 2)
+                {
+                    if (!wasPressed)
+                    {
+                        col2d.enabled = true;
+                    }
+                }   
+
+                }
+            
+        }
+
+
+    //Moves Down
+    transform.Translate(0, -speed * V_Units * Time.deltaTime, 0);
+
+
+
+
+    }
+}
