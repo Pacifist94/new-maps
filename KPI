@@ -44,7 +44,7 @@
             	padding: 0px; 
             	opacity: 0.8; 
             	visibility: hidden; 
-            	background-image: -webkit-linear-gradient(top, #0000ff, #0000ff); 
+            	background-image: -webkit-linear-gradient(top, #000000, #999999); 
         	} 
         	div.UI{ 
             	position: absolute; 
@@ -55,7 +55,7 @@
             	padding: 0px; 
             	opacity: 0.8; 
             	visibility: hidden; 
-            	background-image: -webkit-linear-gradient(top, #00ffff, #00ffff); 
+            	background-image: -webkit-linear-gradient(top, #000000, #999999); 
         	} 
         	div.NumberChange{ 
             	position: absolute; 
@@ -191,7 +191,7 @@
         	} 
         	body { 
             	background-color: #000000; 
-            	background-image: url('http://area.autodesk.com/th.gen/?n/f7neq-g3wfi-wmvb3-tr477:600x600.jpg'); 
+            	/*ackground-image: url('http://area.autodesk.com/th.gen/?n/f7neq-g3wfi-wmvb3-tr477:600x600.jpg'); */
             	background-size:1982px 1300px; 
             	background-repeat: no-repeat; 
             	color: #FFFFFF; 
@@ -253,14 +253,16 @@
                 }
 
             #myInput {
-                  border-box: box-sizing;
-                  background-image: url('searchicon.png');
-                  background-position: 14px 12px;
-                  background-repeat: no-repeat;
+                /*  border-box: box-sizing;*/
+                  /*background-image: url('searchicon.png');*/
+               /*  background-position: 14px 12px;*/
+                /*  background-repeat: no-repeat;*/
                   font-size: 16px;
-                  padding: 14px 20px 12px 45px;
+                  padding: 1px 1px 1px 1px;
                   border: none;
                   border-bottom: 1px solid #ddd;
+                  text-align: center;
+                  height: 25px;
                 }
 
             #myInput:focus {outline: 3px solid #ddd;}
@@ -273,23 +275,34 @@
             .dropdown-content {
                   display: none;
                   position: absolute;
+                  left: 30px;
+                  top: -16px;
                   background-color: #f6f6f6;
                   min-width: 230px;
+                  width: 200px;
                   overflow: auto;
                   border: 1px solid #ddd;
                   z-index: 1;
+
                 }
 
             .dropdown-content a {
                   color: black;
-                  padding: 12px 16px;
+                  padding: 3px 16px;
                   text-decoration: none;
                   display: block;
+              
                 }
 
             .dropdown a:hover {background-color: #ddd;}
 
             .show {display: block;}
+
+            input.reason{
+            		font-family: "Tahoma"; 
+            	font-size: 10px ; 
+            	height: 20px;
+            }
         </style> 
 	</head>
 
@@ -311,33 +324,82 @@
                         <button type="button" style="width:160px;height:25px" onclick="fncRateChange()">Driver</button> 
                         <button type="button" style="width:160px;height:25px" onclick="fncSimChange()">Diner</button> 
                         <hr> 
+                	
                 	Reason: 
-                <input  type="text" autocomplete="off" onclick="myFunction()" placeholder="Search.." id="myInput" onkeypress="myFunction3()" onkeyup="filterFunction()">
+            
+                <input   style="width:400px"  class="reason" type="search" autocomplete="off" onclick="myFunction()" placeholder="Search.." id="myInput" onkeypress="myFunction3()" onkeyup="filterFunction() ">
 
   <br>
 <div class="dropdown">
 
   <div id="myDropdown" class="dropdown-content" >
 
-    <a href="#blog"  onClick="myFunction2('unwanted')" >unwanted</a>
-    <a href="#blog"  onClick="myFunction2('NotReceived')" >NotReceived</a>
-    <a href="#blog"  onClick="myFunction2('missed')" >missed</a>
-    <a href="#blog"  onClick="myFunction2('problem')" >problem</a>
-    <a href="#blog"  onClick="myFunction2('lost')" >lost</a>
-    <a href="#blog"  onClick="myFunction2('item')" >item</a>
-    <a href="#blog"  onClick="myFunction2('food')" >food</a>
-    <a href="#blog"  onClick="myFunction2('under')" >under</a>
-    <a href="#blog"  onClick="myFunction2('incorrect')" >incorrect</a>
-    <a href="#blog"  onClick="myFunction2('temperature')" >temperature</a>
-    <a href="#blog"  onClick="myFunction2('did not answer')" >did not answer</a>
+<!-- <a href="#blog"  onClick="myFunction2('Check Status')" >-Check Status</a> -->
+ 	<a href="#blog"  onClick="myFunction2('Late Delivery')" >Late Delivery</a>
+ 	<a href="#blog"  onClick="myFunction2('Delivery Estimate Confirmation')" >Delivery Estimate Confirmation</a>
+	<a href="#blog"  onClick="myFunction2('Order Not Received')" >Order Not Received</a>
+	<a href="#blog"  onClick="myFunction2('Missed Delivery')" >Missed Delivery</a>
+	<a href="#blog"  onClick="myFunction2('Order Unwanted - Change of plans')" >Order Unwanted - Change of plans</a>
+	<a href="#blog"  onClick="myFunction2('Order Unwanted - Too Late')" >Order Unwanted - Too Late</a>
+	<a href="#blog"  onClick="myFunction2('Restaurant is running late')" >Restaurant is running late</a>
+	<a href="#blog"  onClick="myFunction2('Driver is running')" >Driver is running late</a>
+<!-- <a href="#blog"  onClick="myFunction2('Problems With Food')" >-Problems With Food</a> -->
+	<a href="#blog"  onClick="myFunction2('Food Poisioning Claim')" >Food Poisioning Claim</a>
+	<a href="#blog"  onClick="myFunction2('Food Allergies')" >Food Allergies </a>
+	<a href="#blog"  onClick="myFunction2('Food Temperature')" >Food Temperature</a>
+	<a href="#blog"  onClick="myFunction2('Food Damaged')" >Food Damaged</a>
+	<a href="#blog"  onClick="myFunction2('Food Quality')" >Food Quality</a>
+	<a href="#blog"  onClick="myFunction2('Undercooked Food')" >Undercooked	Food</a>
+	<a href="#blog"  onClick="myFunction2('Foreign Object in Food')" >Foreign Object in Food</a>
+	<a href="#blog"  onClick="myFunction2('Incorrect Item')" >Incorrect Item</a>
+	<a href="#blog"  onClick="myFunction2('Incorrect Order')" >Incorrect Order</a>
+	<a href="#blog"  onClick="myFunction2('Missing Item')" >Missing Item</a>
+	<a href="#blog"  onClick="myFunction2('Special Instructions Issue')" >Special Instructions Issue</a>
+<!-- <a href="#blog"  onClick="myFunction2('-Live order Issues')" >-Live order Issues</a> -->
+	<a href="#blog"  onClick="myFunction2('No Driver')" >No Driver</a>
+	<a href="#blog"  onClick="myFunction2('Order Not at Restaurant')" >Order Not at Restaurant</a>
+	<a href="#blog"  onClick="myFunction2('Diner Didn\'t Answer')" >Diner Didn't Answer</a>
+	<a href="#blog"  onClick="myFunction2('Driver unable to deliver to diner\'s door')" >Driver unable to deliver to diner's door</a>
+	<a href="#blog"  onClick="myFunction2('Order is Missing an Item')" >Order is Missing an Item </a>
+	<a href="#blog"  onClick="myFunction2('Driver Contact-Order is Missing an Item')" >Driver Contact-Order is Missing an Item </a>
+	<a href="#blog"  onClick="myFunction2('Restaurant is Closed')" >Restaurant is Closed</a>
+	<a href="#blog"  onClick="myFunction2('Order/Menu Issue')" >Order/Menu Issue</a>
+	<a href="#blog"  onClick="myFunction2('Delivery Information Incorrect')" >Delivery Information Incorrect</a>
+	<a href="#blog"  onClick="myFunction2('Diner\'s Address is Outside of Delivery Boundaries')" >Diner's Address is Outside of Delivery Boundaries</a>
+	<a href="#blog"  onClick="myFunction2('Driver Lost')" >Driver Lost</a>
+	<a href="#blog"  onClick="myFunction2('Driver is unable to deliver to a military base')" >Driver is unable to deliver to a military base</a>
+	<a href="#blog"  onClick="myFunction2('Driver calling from unknown phone number')" >Driver calling from unknown phone number</a>
+<!--<a href="#blog"  onClick="myFunction2('Order Information Disposition')" >Order Information Disposition</a> -->
+	<a href="#blog"  onClick="myFunction2('Delivery Address Update')" >Delivery Address Update</a>
+	<a href="#blog"  onClick="myFunction2('Contact Information Update')" >Contact Information Update</a>
+	<a href="#blog"  onClick="myFunction2('Order Changed to Delivery')" >Order Changed to Delivery</a>
+	<a href="#blog"  onClick="myFunction2('Order Changed to Pickup')" >Order Changed to Pickup</a>
+	<a href="#blog"  onClick="myFunction2('Restaurant Delivery Estimate Update')" >Restaurant Delivery Estimate Update</a>
+	<a href="#blog"  onClick="myFunction2('Order Details Confirmation')" >Order Details Confirmation</a>
+<!-- <a href="#blog"  onClick="myFunction2('Order Total Modifications Disposition')" >Order Total Modifications  -->Disposition</a>
+	<a href="#blog"  onClick="myFunction2('Item Added To Order')" >Item Added To Order</a>
+	<a href="#blog"  onClick="myFunction2('Item Removed From Order')" >Item Removed From Order</a>
+	<a href="#blog"  onClick="myFunction2('Item replacement')" >Item replacement</a>
+	<a href="#blog"  onClick="myFunction2('Tip Added to Order')" >Tip Added to Order</a>
+	<a href="#blog"  onClick="myFunction2('Tip Removed from Order')" >Tip Removed from Order</a>
+	<a href="#blog"  onClick="myFunction2('Upcharge-Special Instructions')" >Upcharge-Special Instructions</a>
+	<a href="#blog"  onClick="myFunction2('Restaurant Requested Refund')" >Restaurant Requested Refund</a>
+	<a href="#blog"  onClick="myFunction2('Delivery Fee Adjustment-Restaurant Contact')" >Delivery Fee Adjustment-Restaurant Contact</a>
+	<a href="#blog"  onClick="myFunction2('Delivery Fee Removed from Order - Diner Request')" >Delivery Fee Removed from Order - Diner Request</a>
+	<a href="#blog"  onClick="myFunction2('Adjustment procedure')" >Adjustment procedure</a>
+	<a href="#blog"  onClick="myFunction2('Ad Fee Adjustment')" >Ad Fee Adjustment</a>
+<!--<a href="#blog"  onClick="myFunction2('Compromised Diner Accounts/Blocked Orders/Non-Diner Unknown Charges')" >Compromised Diner Accounts/Blocked Orders/Non-Diner Unknown Charges	</a>-->
+	<a href="#blog"  onClick="myFunction2('Compromised Diner Accounts')" >Compromised Diner Accounts</a>
+	<a href="#blog"  onClick="myFunction2('Unknown Charges on bank statement')" >Unknown Charges on bank statement </a>
+	<a href="#blog"  onClick="myFunction2('Blocked Orders')" >Blocked Orders</a>
   
 
   </div>
 </div>
+                    
+                    Additional Reason Description:
                     <br>
-                    Additional Description:
-                    <br>
-                    <textarea id="areaEpin" rows="3" cols="68" ></textarea> 
+                    <textarea id="areaEpin" rows="2" cols="68" ></textarea> 
 
 
 
