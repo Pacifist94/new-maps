@@ -1,0 +1,121 @@
+
+[Diner did not answer]
+Asked to wait 5-10 minutes for the diner to call the driver back. Informed that if they don't hear back from the diner, they can mark as delivered
+
+[Refund]
+
+We’ve processed the (refund/cancellation/adjustment). You should see the transaction settle in the next few days. If you don’t see this adjustment after that, please reach out to your bank.
+
+I understand, sorry for any confusion. I can confirm that the (refund/cancellation/upcharge) has been processed on our end. You should see the transaction settle in the next few days, but since the timing can vary based on your bank, please reach out to your financial institution if you have any questions.”
+
+---------- Cannot Mark as Delivered
+
+ Send sms to diner / send request to have this order as delivered using the macro
+
+
+
+ -Check Status
+ 	Late Delivery
+ 	Delivery Estimate Confirmation
+	Order Not Received
+	Missed Delivery
+	Order Unwanted - Change of plans
+	Order Unwanted - Too Late
+	Restaurant is running late
+	Driver is running late
+-Problems With Food
+	Food Poisioning Claim
+	Food Allergies 
+	Food Temperature
+	Food Damaged
+	Food Quality
+	Undercooked	Food
+	Foreign Object in Food
+	Incorrect Item
+	Incorrect Order
+	Missing Item
+	Special Instructions Issue
+-Live order Issues
+	No Driver
+	Order Not at Restaurant
+	Diner Didn't Answer
+	Driver unable to deliver to diner's door
+	Order is Missing an Item 
+	Driver Contact-Order is Missing an Item 
+	Restaurant is Closed
+	Order/Menu Issue
+	Delivery Information Incorrect
+	Diner's Address is Outside of Delivery Boundaries
+	Driver Lost
+	Driver is unable to deliver to a military base
+	Driver calling from unknown phone number
+Order Information Disposition
+	Delivery Address Update
+	Contact Information Update
+	Order Changed to Delivery
+	Order Changed to Pickup
+	Restaurant Delivery Estimate Update
+	Order Details Confirmation
+Order Total Modifications Disposition
+	Item Added To Order
+	Item Removed From Order
+	Item replacement
+	Tip Added to Order
+	Tip Removed from Order
+	Upcharge-Special Instructions
+	Restaurant Requested Refund
+	Delivery Fee Adjustment-Restaurant Contact
+	Delivery Fee Removed from Order - Diner Request
+	Adjustment procedure
+	Ad Fee Adjustment
+Compromised Diner Accounts/Blocked Orders/Non-Diner Unknown Charges	
+	Compromised Diner Accounts
+	Unknown Charges on bank statement 
+	Blocked Orders
+
+
+
+
+
+Who did we speak with: (diner) (driver) (restaurant)
+
+What was their issue: Missed Delivery / Wrong Phone
+
+What action did we take:
+
+
+
+Outbound call notes (if an outbound call was made):
+
+(Required) Name of the person you spoke with:
+
+Provide a description of what was discussed:
+
+
+*Reminder: Please offer the survey at the end of the call.
+
+
+
+<button id="mn_336911" class="zd-selectmenu-base" role="button" tabindex="0" type="button" style="">
+                   <span class="zd-selectmenu-base-arrow zd-icon-arrow-down"></span>
+                   <span id="mn_336912" class="zd-selectmenu-base-content">Check Status</span>
+                 </button>
+
+
+ [Drivers] 
+-Reassign Order
+-Cannot mark as Delivered
+-
+
+ [Restaurants] 
+
+//Phone number Update
+ @dcare [Driver's ID] [New Phone Number] [Old Phone Number].
+
+// Driver Assignment
+ @dcare can you assign a driver to order: # 
+
+// Delivery Address Updated
+@dcare driver accepted to go to the new address on the order: 
+Old address: 
+New address: 
