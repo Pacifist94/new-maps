@@ -76,6 +76,58 @@ Compromised Diner Accounts/Blocked Orders/Non-Diner Unknown Charges
 
 
 
+Actions taken
+{
+Called Diner
+Called Driver
+Called Restaurant 
+
+Transferred to Driver Care 
+Transferred to CXT
+Transferred to Restaurant Care
+Transferred to other [
+Java Coporate Care,
+Elite Care, 
+Corporate Care - Seamless, 
+Corporate Care - Grubhub for Work
+Custom
+]
+
+Transferred not completed 
+-Called hung up
+
+Refund Expectation 
+
+
+No answer/ Left VM| Unable to Leave VM 
+Sent sms 
+Sent email
+
+Got ETA
+
+Refunded on GH 
+Refunded on REST 
+SPLIT REFUND
+
+Provided Free Grub
+Provided Seamless Cash
+Provided Promo Code
+
+Sent Macro to Driver Care
+Sent Macro to Restaurant Care
+Sent Macro to CXT
+
+Resent Order
+
+
+
+
+
+
+
+}
+
+
 
 Who did we speak with: (diner) (driver) (restaurant)
 
